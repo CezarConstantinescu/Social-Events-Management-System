@@ -1,12 +1,31 @@
 package com.social_events_management_system.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.JoinColumn;
+import jakarta.persistence.ManyToOne;
+import jakarta.persistence.Table;
 import java.time.LocalDateTime;
 
+@Entity
+@Table(name = "events")
 public class Event {
+    @Id
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "name")
     private String name;
+
+    @ManyToOne
+    @JoinColumn(name = "venue_id")
     private Venue venue;
+
+    @Column(name = "start_time")
     private LocalDateTime start;
+
+    @Column(name = "end_time")
     private LocalDateTime end;
 
     public Event() {}

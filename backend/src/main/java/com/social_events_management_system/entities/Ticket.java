@@ -1,9 +1,24 @@
 package com.social_events_management_system.entities;
 
+import jakarta.persistence.Column;
+import jakarta.persistence.Entity;
+import jakarta.persistence.Id;
+import jakarta.persistence.Table;
+
+@Entity
+@Table(name = "tickets")
 public class Ticket {
+    @Id
+    @Column(name = "id")
     private String id;
+
+    @Column(name = "event_id")
     private String eventId;
+
+    @Column(name = "user_id")
     private String userId;
+
+    @Column(name = "quantity")
     private int quantity;
 
     public Ticket() {}
